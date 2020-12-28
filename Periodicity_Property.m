@@ -1,0 +1,15 @@
+clc;
+clear all;
+close all;
+s = input('Enter your sequence');
+N = length(s);
+n = 1:N;
+k = n;
+x= n-1; 
+widthOfLine = 1.5;
+DFT(k) = fft(s(n));
+shiftedDFT(k) = fft(s(mod(N+n,N+1)+1));
+disp("DFT of x(n): ");
+disp(DFT.');
+disp("DFT of x(n+N): ");
+disp(shiftedDFT.');
